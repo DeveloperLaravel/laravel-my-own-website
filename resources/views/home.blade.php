@@ -42,7 +42,8 @@
     :author-name="__('messages.abbes')"
     date="2024-01-12"
 />
-          
+     
+
           <!-- End post list item -->
 <x-post-card 
     image="assets/style/images/3.jpg"
