@@ -22,7 +22,7 @@
             <x-link href=""><i class="bi bi-twitter"></i></x-link>
           <!-- Uncomment the line below if you also wish to use an image logo -->
            <i  class="logo d-flex align-items-center">
-            <x-image src="{{asset('assets/style/images/abbes.png')}}" alt="شعار الموقع" class="img-fluid" />
+            <x-image src="{{asset('/images/abbes.png')}}" alt="شعار الموقع" class="img-fluid" />
 
 </i>
           </div>

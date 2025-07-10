@@ -1,7 +1,7 @@
 <x-layout>
       <x-slot name="header">
  
-  <x-basis.navbar  :showCourseFlutter="true" :logo="'assets/style/images/logo/icons8-flutter-logo-96.png'"   :title="__('messages.Flutterprogramming')"/>
+  <x-basis.navbar  :showCourseFlutter="true" :logo="'images/logo/icons8-flutter-logo-96.png'"   :title="__('messages.Flutterprogramming')"/>
     </x-slot>
 
 
@@ -20,7 +20,7 @@
        
            <x-lesson-box
     title="{{ __('messages.exampleflutter') }}"
-    image="assets/vendor/images/6.png"
+    image="images/6.png"
     :intro-lessons="[
         __('messages.MyAppflutter'),
         __('messages.MyAppflutter'),
@@ -48,7 +48,7 @@
         ['text' => __('messages.completeflutter')],
     ]"
     footer-text="{{ __('messages.buildflutter') }}"
-    images="assets/style/images/7.jpg"
+    images="images/7.jpg"
     video="https://www.youtube.com/watch?v=6jKvbBQXPJ4&t=49s"
 />
       </div>

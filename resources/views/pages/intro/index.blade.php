@@ -6,8 +6,8 @@
 
 
   <!-- Hero Section -->
-  <section id="hero" class="hero section accent-background">
-    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+  <section id="footer" class="hero section accent-background">
+    <div class="container position-relative" >
       <div class="row gy-5 justify-content-between">
         <!-- Welcome Text -->
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
@@ -26,38 +26,38 @@
 
         <!-- Hero Image -->
         <div class="col-lg-5 order-1 order-lg-2">
-          <x-image  src="{{asset('assets/style/images/9.png')}}" class="img-fluid" alt="شعار الموقع" />
+          <x-image  src="{{asset('/images/9.png')}}" class="img-fluid" alt="شعار الموقع" />
         </div>
       </div>
     </div>
 
     <!-- Icon Boxes -->
-    <div class="icon-boxes position-relative" data-aos="fade-up" data-aos-delay="200">
+    <div class="icon-boxes position-relative">
       <div class="container position-relative">
         <div class="row gy-4 mt-5">
 
           <!-- Flutter Box -->
          <x-service-box 
           title="Flutter"
-          image="assets/style/images/logo/icons8-flutter-logo-96.png"
+          image="images/logo/icons8-flutter-logo-96.png"
           route="flutter"/>
 
           <!-- Laravel Box -->
          <x-service-box 
             title="Laravel"
-            image="assets/style/images/logo/icons8-laravel-96.png"
+            image="images/logo/icons8-laravel-96.png"
             route="php"/>
 
           <!-- Dart Box -->
           <x-service-box 
             title="Dart"
-            image="assets/style/images/logo/icons8-dart-96.png"
+            image="/images/logo/icons8-dart-96.png"
             route="dart"/>
 
           <!-- Teaching Box -->
            <x-service-box 
             :title="__('messages.Teaching')"
-            image="assets/style/images/logo/icons8-user-100.png"
+            image="/images/logo/icons8-user-100.png"
             route="home"/>
 
         </div>

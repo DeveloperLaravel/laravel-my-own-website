@@ -4,7 +4,7 @@
   'showCourseDart' => false,
   'showCourseFlutter' => false,
   'showCourseLaravel' => false,
-   'logo' => 'assets/style/images/logo/icons8-libya-48.png',
+   'logo' => '/images/logo/icons8-libya-48.png',
    'title' => null,
 
 ])

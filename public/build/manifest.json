@@ -1,13 +1,42 @@
 {
-  "resources/css/app.css": {
-    "file": "assets/app-BKgp3IOk.css",
-    "src": "resources/css/app.css",
-    "isEntry": true
+  "_app-BWeuDkD-.css": {
+    "file": "assets/app-BWeuDkD-.css",
+    "src": "_app-BWeuDkD-.css"
+  },
+  "resources/css/bootstrap-icons/fonts/bootstrap-icons.woff": {
+    "file": "assets/bootstrap-icons-BOrJxbIo.woff",
+    "src": "resources/css/bootstrap-icons/fonts/bootstrap-icons.woff"
+  },
+  "resources/css/bootstrap-icons/fonts/bootstrap-icons.woff2": {
+    "file": "assets/bootstrap-icons-BtvjY1KL.woff2",
+    "src": "resources/css/bootstrap-icons/fonts/bootstrap-icons.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DNxiirP_.js",
+    "file": "assets/app-CiuRXJlE.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "css": [
+      "assets/app-DUyVCUQi.css",
+      "assets/app-BWeuDkD-.css"
+    ],
+    "assets": [
+      "assets/bootstrap-icons-BtvjY1KL.woff2",
+      "assets/bootstrap-icons-BOrJxbIo.woff"
+    ]
+  },
+  "resources/js/auth.js": {
+    "file": "assets/auth-CalOJdUd.js",
+    "name": "auth",
+    "src": "resources/js/auth.js",
+    "isEntry": true,
+    "css": [
+      "assets/auth-D9C3eQEn.css",
+      "assets/app-BWeuDkD-.css"
+    ],
+    "assets": [
+      "assets/bootstrap-icons-BtvjY1KL.woff2",
+      "assets/bootstrap-icons-BOrJxbIo.woff"
+    ]
   }
 }

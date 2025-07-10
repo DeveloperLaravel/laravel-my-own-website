@@ -1,13 +1,13 @@
 <x-layout>
-    @push('style')
-        <link rel="stylesheet" href="{{ asset('css.css') }}">
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      @push('style')
+<link rel="stylesheet" href="{{asset('css.css')}}">
+<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     @endpush
-
+  @vite('resources/js/auth.js')
     <section>
         <div class="wrapper">
             <div class="logo">
-          <x-image  src="{{ asset('assets/vendor/images/logo/icons8-libya-48.png') }}" class="img-fluid" alt="شعار الموقع" />
+          <x-image  src="{{ asset('images/logo/icons8-libya-48.png') }}" class="img-fluid" alt="شعار الموقع" />
             </div>
 
             <div class="text-center mt-4 name">
