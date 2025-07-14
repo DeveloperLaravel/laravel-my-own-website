@@ -21,6 +21,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Copy .env.example
+      run: cp .env.example .env
+
+    - name: Replace environment variables in .env
+      run: |
+        sed -i "s|\${DB_HOST}|${{ secrets.DB_HOST }}|g" .env
+        sed -i "s|\${DB_PORT}|${{ secrets.DB_PORT }}|g" .env
+        sed -i "s|\${DB_DATABASE}|${{ secrets.DB_DATABASE }}|g" .env
+        sed -i "s|\${DB_USERNAME}|${{ secrets.DB_USERNAME }}|g" .env
+        sed -i "s|\${DB_PASSWORD}|${{ secrets.DB_PASSWORD }}|g" .env
+
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
@@ -36,22 +47,17 @@ jobs:
     - name: Install backend dependencies
       run: composer install --no-progress --prefer-dist --optimize-autoloader
 
+    - name: Install Laravel Sanctum
+      run: composer require laravel/sanctum
+
     - name: Install frontend dependencies
       run: npm install
 
+    - name: Fix permissions for vite
+      run: chmod +x ./node_modules/.bin/vite
+
     - name: Build frontend (Vite)
       run: npm run build
-
-    - name: Copy .env.example
-      run: cp .env.example .env
-
-    - name: Replace environment variables in .env
-      run: |
-        sed -i "s|\${DB_HOST}|${{ secrets.DB_HOST }}|g" .env
-        sed -i "s|\${DB_PORT}|${{ secrets.DB_PORT }}|g" .env
-        sed -i "s|\${DB_DATABASE}|${{ secrets.DB_DATABASE }}|g" .env
-        sed -i "s|\${DB_USERNAME}|${{ secrets.DB_USERNAME }}|g" .env
-        sed -i "s|\${DB_PASSWORD}|${{ secrets.DB_PASSWORD }}|g" .env
 
     - name: Generate app key
       run: php artisan key:generate
