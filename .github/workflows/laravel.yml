@@ -1,0 +1,77 @@
+name: Laravel CI with Vite
+
+on:
+  push:
+    branches: [mst] # ← عدّلها لفرعك
+  pull_request:
+    branches: [mst]
+
+jobs:
+  laravel-tests:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: my_own_website
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.2
+        extensions: mbstring, bcmath, mysql
+        coverage: none
+
+    - name: Setup Node.js (for Vite)
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22.16.0' # أو النسخة التي تستعملها
+
+    - name: Install backend dependencies
+      run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+    - name: Install frontend dependencies
+      run: npm install
+
+    - name: Build frontend (Vite)
+      run: npm run build
+
+    - name: Copy .env
+      run: cp .env.example .env
+
+    - name: Generate app key
+      run: php artisan key:generate
+
+    - name: Run migrations
+      env:
+        DB_CONNECTION: mysql
+        DB_HOST: 127.0.0.1
+        DB_PORT: 3306
+        DB_DATABASE: my_own_website
+        DB_USERNAME: root
+        DB_PASSWORD: root
+      run: php artisan migrate
+
+    - name: Run tests
+      env:
+        DB_CONNECTION: mysql
+        DB_HOST: 127.0.0.1
+        DB_PORT: 3306
+        DB_DATABASE: my_own_website
+        DB_USERNAME: root
+        DB_PASSWORD: root
+      run: php artisan test
+
+  
