@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["php", "php.packages.composer", "nodejs", "mysql", "git"]
+nixPkgs = ["php", "php.packages.composer", "nodejs", "mariadb", "git"]
 
 [phases.build]
 cmds = [
